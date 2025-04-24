@@ -54,7 +54,7 @@ export default function Scene({ pasoInicial = 1 }) {
   };
 
   // Mostrar pantalla de bienvenida
-  if (!aceptado) {
+  if (aceptado) {
     return <Welcome onAceptar={() => setAceptado(true)} />;
   }
 
@@ -65,7 +65,7 @@ export default function Scene({ pasoInicial = 1 }) {
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
         <CameraController modoLibre={modoLibre} />
         <Suspense fallback={null}>
-          <Model3D ruta={paso.model} title={paso.title} />
+          <Model3D ruta={paso.model}  scale={paso.scale} />
         </Suspense>
       </Canvas>
 
