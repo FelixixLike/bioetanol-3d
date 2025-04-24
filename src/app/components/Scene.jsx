@@ -54,7 +54,7 @@ export default function Scene({ pasoInicial = 1 }) {
   };
 
   // Mostrar pantalla de bienvenida
-  if (aceptado) {
+  if (!aceptado) {
     return <Welcome onAceptar={() => setAceptado(true)} />;
   }
 
