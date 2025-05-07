@@ -1,67 +1,76 @@
 "use client";
 
 export const pasos = {
-    1: {
-        model: "/modelos/pineapple.glb",
-        title: "Materia prima",
-        description: "Se selecciona la piña como fuente de biomasa rica en azúcares.",
-        scale: 0.6 ,
-        objetive: "Identificar y seleccionar piñas adecuadas como materia prima para la producción de bioetanol."
-      },
-      2: {
-        model: "/modelos/triturador.glb",
-        title: "Preparación - Trituración",
-        description: "La piña se tritura para liberar los azúcares presentes, aumentando la superficie de contacto para facilitar la hidrólisis de la celulosa.",
-        scale: 5 ,
-        objetive: "Reducir el tamaño de las partículas para mejorar la liberación de azúcares."
-      },
-      3: {
-        model: "/modelos/extractor.glb",
-        title: "Extracción de jugo",
-        description: "Se extraen los azúcares mediante prensado mecánico, agua caliente o solventes enzimáticos.",
-        scale: 5 ,
-        objetive: "Separar los azúcares presentes en la pulpa y la cáscara de la piña utilizando métodos físicos o químicos, con el fin de obtener un líquido rico en compuestos fermentables para el siguiente proceso."
-      },
-      4: {
-        model: "/modelos/hidrolización.glb",
-        title: "Pretratamiento - Hidrolización",
-        description: "Se añaden enzimas o ácidos para romper los carbohidratos complejos en azúcares simples mediante hidrólisis química o enzimática.",
-        scale: 5 ,
-        objetive: "Convertir carbohidratos complejos en azúcares fermentables mediante tratamiento químico o enzimático."
-      },
-      5: {
-        model: "/modelos/fermentacion.glb",
-        title: "Fermentación",
-        description: "Las levaduras convierten los azúcares en etanol y dióxido de carbono bajo condiciones controladas de temperatura, pH y tiempo.",
-        scale: 5 ,
-        objetive: "Transformar los azúcares simples en etanol mediante acción de levaduras."
-      },
-      6: {
-        model: "/modelos/destilacion.glb",
-        title: "Destilación",
-        description: "Se separa el etanol del agua y otros compuestos calentando el mosto fermentado y condensando los vapores de etanol.",
-        scale: 5 ,
-        objetive: "Separar y concentrar el etanol producido durante la fermentación."
-      },
-      7: {
-        model: "/modelos/purificacion.glb",
-        title: "Purificación",
-        description: "Se obtiene etanol con mayor pureza mediante destilación fraccionada o adsorción con tamices moleculares.",
-        scale: 5 ,
-        objetive: "Eliminar impurezas y obtener etanol de alta pureza."
-      },
-      8: {
-        model: "/modelos/bioetanol.glb",
-        title: "Bioetanol Final",
-        description: "El bioetanol purificado se almacena en contenedores para su posterior aplicación como biocombustible.",
-        scale: 5 ,
-        objetive: "Almacenar el bioetanol obtenido en condiciones adecuadas para su uso."
-      },
-      9: {
-        model: "/modelos/celdas.glb",
-        title: "Aplicación en Celdas de Combustible",
-        description: "El bioetanol se usa en pilas de combustible para generar electricidad.",
-        scale: 5 ,
-        objetive: "Transformar la energía química del bioetanol en energía eléctrica mediante celdas de combustible, promoviendo una fuente de energía limpia y eficiente con aplicaciones en sistemas portátiles o estacionarios."
-      }
-    };
+  1: {
+    model: "/modelos/pineapple.glb",
+    sound: "/sounds/pineapple.mp3",
+    title: "Materia prima",
+    description: "La piña es seleccionada como materia prima por su alto contenido de azúcares naturales, lo que la convierte en una fuente ideal para la producción de bioetanol a partir de biomasa.",
+    scale: 0.6,
+    objetive: "Reconocer la piña como un recurso renovable clave para la producción de bioetanol y comprender su valor como fuente de azúcares fermentables."
+  },
+  2: {
+    model: "/modelos/triturador.glb",
+    sound: "/sounds/triturador.mp3",
+    title: "Preparación - Trituración",
+    description: "La piña es triturada utilizando maquinaria especializada para descomponer su estructura física y aumentar la superficie de contacto, lo cual facilita la posterior extracción de jugos y compuestos bioquímicos.",
+    scale: 5,
+    objetive: "Desintegrar mecánicamente la biomasa de piña para optimizar la liberación de azúcares y preparar el material para etapas posteriores del proceso."
+  },
+  3: {
+    model: "/modelos/extractor.glb",
+    sound: "/sounds/extractor.mp3",
+    title: "Extracción de jugo",
+    description: "Mediante prensado mecánico o el uso de solventes, se extraen los jugos ricos en azúcares presentes en la pulpa y la cáscara de la piña, obteniendo una solución líquida fundamental para la fermentación.",
+    scale: 5,
+    objetive: "Obtener un extracto líquido con alta concentración de azúcares fermentables mediante métodos físicos y/o químicos, clave para continuar con la conversión bioquímica."
+  },
+  4: {
+    model: "/modelos/hidrolización.glb",
+    sound: "/sounds/hidrolización.mp3",
+    title: "Pretratamiento - Hidrolización",
+    description: "En esta fase, se aplican enzimas o ácidos que descomponen los carbohidratos complejos de la piña (como celulosa y hemicelulosa) en azúcares simples, que pueden ser fermentados más fácilmente.",
+    scale: 5,
+    objetive: "Transformar macromoléculas no fermentables en azúcares simples mediante hidrólisis química o enzimática, mejorando la eficiencia del proceso fermentativo."
+  },
+  5: {
+    model: "/modelos/fermentacion.glb",
+    sound: "/sounds/fermentacion.mp3",
+    title: "Fermentación",
+    description: "Se inoculan microorganismos como levaduras en el líquido azucarado para transformar los azúcares simples en etanol y dióxido de carbono, bajo condiciones controladas de temperatura, pH y tiempo.",
+    scale: 5,
+    objetive: "Convertir los azúcares simples en bioetanol mediante procesos biotecnológicos controlados, aprovechando la acción metabólica de levaduras especializadas."
+  },
+  6: {
+    model: "/modelos/destilacion.glb",
+    sound: "/sounds/destilacion.mp3",
+    title: "Destilación",
+    description: "El líquido fermentado se somete a calor para evaporar el etanol, el cual se condensa posteriormente en un sistema de columnas, separándolo del agua y otros compuestos residuales.",
+    scale: 5,
+    objetive: "Separar el etanol producido del resto del líquido fermentado mediante técnicas térmicas de evaporación y condensación."
+  },
+  7: {
+    model: "/modelos/purificacion.glb",
+    sound: "/sounds/purificacion.mp3",
+    title: "Purificación",
+    description: "Se aplica destilación fraccionada o sistemas de adsorción molecular para eliminar impurezas, logrando un bioetanol con un nivel de pureza adecuado para su uso energético.",
+    scale: 5,
+    objetive: "Refinar el etanol obtenido para cumplir con los estándares de calidad que permitan su aplicación como biocombustible eficiente."
+  },
+  8: {
+    model: "/modelos/bioetanol.glb",
+    sound: "/sounds/bioetanol.mp3",
+    title: "Bioetanol Final",
+    description: "El bioetanol ya purificado se almacena en recipientes adecuados, listo para su distribución y uso como fuente de energía renovable en diversas aplicaciones industriales o vehiculares.",
+    scale: 5,
+    objetive: "Asegurar el almacenamiento correcto del bioetanol producido, conservando sus propiedades y garantizando su disponibilidad para usos energéticos sostenibles."
+  },
+  9: {
+    model: "/modelos/celdas.glb",
+    sound: "/sounds/celdas.mp3",
+    title: "Aplicación en Celdas de Combustible",
+    description: "El bioetanol se utiliza como combustible en celdas de energía, donde se convierte en electricidad mediante una reacción electroquímica, promoviendo el uso de energías limpias.",
+    scale: 5,
+    objetive: "Demostrar el uso del bioetanol como insumo energético en sistemas electroquímicos para generar electricidad sin emisiones contaminantes."
+  }
+};

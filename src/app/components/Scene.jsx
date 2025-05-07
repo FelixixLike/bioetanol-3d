@@ -8,23 +8,19 @@ import { pasos } from "./pasos";
 import Welcome from "./Welcome";
 import Controles from "./Controles";
 
-// ✅ Precargar todos los modelos
+// Precargar todos los modelos 3D
 Object.values(pasos).forEach((p) => {
   useGLTF.preload(p.model);
 });
 
+// Controlador de cámara que cambia según el modo
 function CameraController({ modoLibre }) {
   const controlsRef = useRef();
   const { camera } = useThree();
 
   useEffect(() => {
-    if (modoLibre) {
-      camera.position.set(1, 3, 7);
-      camera.lookAt(0, 0, 0);
-    } else {
-      camera.position.set(1, 3, 20);
-      camera.lookAt(0, 0, 0);
-    }
+    camera.position.set(1, 3, modoLibre ? 7 : 20);
+    camera.lookAt(0, 0, 0);
   }, [modoLibre]);
 
   return (
@@ -42,10 +38,10 @@ export default function Scene({ pasoInicial = 1 }) {
   const [aceptado, setAceptado] = useState(false);
   const [currentStep, setCurrentStep] = useState(pasoInicial);
   const [modoLibre, setModoLibre] = useState(false);
+
   const paso = pasos[currentStep];
 
-  // Mostrar pantalla de bienvenida
-  if (!aceptado) {
+  if (aceptado) {
     return <Welcome onAceptar={() => setAceptado(true)} />;
   }
 
@@ -58,32 +54,20 @@ export default function Scene({ pasoInicial = 1 }) {
         <Suspense fallback={null}>
           <Model3D ruta={paso.model} scale={paso.scale} />
         </Suspense>
-
       </Canvas>
 
-      {/* Título del paso */}
+      {/* Título del paso actual */}
       <h1 className="absolute top-6 inset-x-0 text-center text-3xl sm:text-4xl md:text-5xl font-bold text-red-600 drop-shadow-lg z-50">
         {paso.title}
       </h1>
 
-      {/* Controles de paso y navegación */}
-      {!modoLibre && (
-        <Controles
-          currentStep={currentStep}
-          setCurrentStep={setCurrentStep}
-          setModoLibre={setModoLibre}
-        />
-      )}
-
-      {/* Botón Retroceder en modo libre */}
-      {modoLibre && (
-        <button
-          onClick={() => setModoLibre(false)}
-          className="fixed bottom-6 right-6 bg-cyan-900 text-white px-5 py-2 rounded-md shadow-md hover:bg-cyan-800 transition z-50"
-        >
-          Retroceder  
-        </button>
-      )}
+      {/* Controles de navegación y audio */}
+      <Controles
+        currentStep={currentStep}
+        setCurrentStep={setCurrentStep}
+        modoLibre={modoLibre}
+        setModoLibre={setModoLibre}
+      />
     </div>
   );
 }
