@@ -41,7 +41,7 @@ export default function Scene({ pasoInicial = 1 }) {
 
   const paso = pasos[currentStep];
 
-  if (aceptado) {
+  if (!aceptado) {
     return <Welcome onAceptar={() => setAceptado(true)} />;
   }
 
