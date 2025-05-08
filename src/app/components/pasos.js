@@ -2,7 +2,7 @@
 
 export const pasos = {
   1: {
-    model: "/modelos/pineapple.glb",
+    model: "/modelos/pineapple-opt.glb",
     sound: "/sounds/pineapple.mp3",
     title: "Materia prima",
     description: "La piña es seleccionada como materia prima por su alto contenido de azúcares naturales, lo que la convierte en una fuente ideal para la producción de bioetanol a partir de biomasa.",
@@ -10,7 +10,7 @@ export const pasos = {
     objetive: "Reconocer la piña como un recurso renovable clave para la producción de bioetanol y comprender su valor como fuente de azúcares fermentables."
   },
   2: {
-    model: "/modelos/triturador.glb",
+    model: "/modelos/triturador-opt.glb",
     sound: "/sounds/triturador.mp3",
     title: "Preparación - Trituración",
     description: "La piña es triturada utilizando maquinaria especializada para descomponer su estructura física y aumentar la superficie de contacto, lo cual facilita la posterior extracción de jugos y compuestos bioquímicos.",
@@ -18,7 +18,7 @@ export const pasos = {
     objetive: "Desintegrar mecánicamente la biomasa de piña para optimizar la liberación de azúcares y preparar el material para etapas posteriores del proceso."
   },
   3: {
-    model: "/modelos/extractor.glb",
+    model: "/modelos/extractor-opt.glb",
     sound: "/sounds/extractor.mp3",
     title: "Extracción de jugo",
     description: "Mediante prensado mecánico o el uso de solventes, se extraen los jugos ricos en azúcares presentes en la pulpa y la cáscara de la piña, obteniendo una solución líquida fundamental para la fermentación.",
@@ -26,7 +26,7 @@ export const pasos = {
     objetive: "Obtener un extracto líquido con alta concentración de azúcares fermentables mediante métodos físicos y/o químicos, clave para continuar con la conversión bioquímica."
   },
   4: {
-    model: "/modelos/hidrolización.glb",
+    model: "/modelos/hidrolización-opt.glb",
     sound: "/sounds/hidrolización.mp3",
     title: "Pretratamiento - Hidrolización",
     description: "En esta fase, se aplican enzimas o ácidos que descomponen los carbohidratos complejos de la piña (como celulosa y hemicelulosa) en azúcares simples, que pueden ser fermentados más fácilmente.",
@@ -34,7 +34,7 @@ export const pasos = {
     objetive: "Transformar macromoléculas no fermentables en azúcares simples mediante hidrólisis química o enzimática, mejorando la eficiencia del proceso fermentativo."
   },
   5: {
-    model: "/modelos/fermentacion.glb",
+    model: "/modelos/fermentacion-opt.glb",
     sound: "/sounds/fermentacion.mp3",
     title: "Fermentación",
     description: "Se inoculan microorganismos como levaduras en el líquido azucarado para transformar los azúcares simples en etanol y dióxido de carbono, bajo condiciones controladas de temperatura, pH y tiempo.",
@@ -42,7 +42,7 @@ export const pasos = {
     objetive: "Convertir los azúcares simples en bioetanol mediante procesos biotecnológicos controlados, aprovechando la acción metabólica de levaduras especializadas."
   },
   6: {
-    model: "/modelos/destilacion.glb",
+    model: "/modelos/destilacion-opt.glb",
     sound: "/sounds/destilacion.mp3",
     title: "Destilación",
     description: "El líquido fermentado se somete a calor para evaporar el etanol, el cual se condensa posteriormente en un sistema de columnas, separándolo del agua y otros compuestos residuales.",
@@ -50,7 +50,7 @@ export const pasos = {
     objetive: "Separar el etanol producido del resto del líquido fermentado mediante técnicas térmicas de evaporación y condensación."
   },
   7: {
-    model: "/modelos/purificacion.glb",
+    model: "/modelos/purificacion-opt.glb",
     sound: "/sounds/purificacion.mp3",
     title: "Purificación",
     description: "Se aplica destilación fraccionada o sistemas de adsorción molecular para eliminar impurezas, logrando un bioetanol con un nivel de pureza adecuado para su uso energético.",
@@ -58,7 +58,7 @@ export const pasos = {
     objetive: "Refinar el etanol obtenido para cumplir con los estándares de calidad que permitan su aplicación como biocombustible eficiente."
   },
   8: {
-    model: "/modelos/bioetanol.glb",
+    model: "/modelos/bioetanol-opt.glb",
     sound: "/sounds/bioetanol.mp3",
     title: "Bioetanol Final",
     description: "El bioetanol ya purificado se almacena en recipientes adecuados, listo para su distribución y uso como fuente de energía renovable en diversas aplicaciones industriales o vehiculares.",
@@ -66,7 +66,7 @@ export const pasos = {
     objetive: "Asegurar el almacenamiento correcto del bioetanol producido, conservando sus propiedades y garantizando su disponibilidad para usos energéticos sostenibles."
   },
   9: {
-    model: "/modelos/celdas.glb",
+    model: "/modelos/celdas-opt.glb",
     sound: "/sounds/celdas.mp3",
     title: "Aplicación en Celdas de Combustible",
     description: "El bioetanol se utiliza como combustible en celdas de energía, donde se convierte en electricidad mediante una reacción electroquímica, promoviendo el uso de energías limpias.",

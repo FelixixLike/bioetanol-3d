@@ -1,0 +1,67 @@
+[33mcommit 748e61b3d2d36f2f795397049e6dded399db4f43[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Felixix L_X <a.felipemg16@gmail.com>
+Date:   Thu May 8 15:57:03 2025 -0500
+
+    ok
+
+[33mcommit 4f187f5d886acd4883aed24ba86e209f2fdaab10[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Felixix L_X <a.felipemg16@gmail.com>
+Date:   Tue May 6 20:02:57 2025 -0500
+
+    arreglo
+
+[33mcommit 8bdf4c7e070afbb304a53ada47699b3022b94cd2[m
+Author: Felixix L_X <a.felipemg16@gmail.com>
+Date:   Tue May 6 20:00:36 2025 -0500
+
+    Sonidos
+    
+    se agregaron los sonidos
+
+[33mcommit c725ac0f89add8c66bfd05ee01fc101d14348117[m
+Author: Felixix L_X <a.felipemg16@gmail.com>
+Date:   Tue Apr 29 20:10:36 2025 -0500
+
+    Mejoras en la logica
+    
+    Se mejoro la estructura y logica, aún falta agregar detalles de audio y visuales
+
+[33mcommit 8b42c838b53cd45ea929032af14ff71e4cbc42bf[m
+Author: Felixix L_X <a.felipemg16@gmail.com>
+Date:   Thu Apr 24 18:38:03 2025 -0500
+
+    modelos cargados boceto
+
+[33mcommit d5ef7da061ff5b83fb9cee47ea7d31df3b620160[m
+Author: Felixix L_X <a.felipemg16@gmail.com>
+Date:   Thu Apr 24 16:07:36 2025 -0500
+
+    3
+
+[33mcommit 5beed34dec46ccfee2e069dc75478e18895a60b0[m
+Author: Felixix L_X <a.felipemg16@gmail.com>
+Date:   Thu Apr 24 15:37:12 2025 -0500
+
+    2
+
+[33mcommit 2e755cf2339fea2d3159d7096167b285f85d35ff[m
+Author: Felixix L_X <a.felipemg16@gmail.com>
+Date:   Tue Apr 22 16:29:19 2025 -0500
+
+    cambios en logica
+    
+    se hizo los cambios a lógica y funcionamiento base
+
+[33mcommit 2647055cb417a805695fa2948053691611ae778c[m
+Author: Felixix L_X <a.felipemg16@gmail.com>
+Date:   Mon Apr 21 11:57:34 2025 -0500
+
+    Base de modelo 1
+    
+    se crea el modelo 3D
+
+[33mcommit 950c8fa8d4b9c8016d01008a465a39dd93d19853[m
+Author: Felixix L_X <a.felipemg16@gmail.com>
+Date:   Mon Apr 21 10:45:44 2025 -0500
+
+    Initial commit from Create Next App
