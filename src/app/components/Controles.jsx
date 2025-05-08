@@ -12,27 +12,46 @@ export default function Controles({
   const audioRef = useRef(null);
   const [muted, setMuted] = useState(false);
 
-  // Avanzar al siguiente paso
+  const sonidoFlecha = new Audio("/sounds/sound_flechas.mp3");
+  const sonidoBoton = new Audio("/sounds/sound_button.mp3");
+
+  // 🔊 Siempre se escucha excepto si forPaso=true y mute activado
+  const playSound = (audio, forPaso = false) => {
+    if (!forPaso || (forPaso && !muted)) {
+      audio.currentTime = 0;
+      audio.play().catch(() => {});
+    }
+  };
+
   const siguiente = () => {
-    if (pasos[currentStep + 1]) setCurrentStep(currentStep + 1);
+    if (pasos[currentStep + 1]) {
+      playSound(sonidoFlecha);
+      setCurrentStep(currentStep + 1);
+    }
   };
 
-  // Retroceder al paso anterior
   const anterior = () => {
-    if (currentStep > 1) setCurrentStep(currentStep - 1);
+    if (currentStep > 1) {
+      playSound(sonidoFlecha);
+      setCurrentStep(currentStep - 1);
+    }
   };
 
-  // Reproducir sonido en bucle cuando entra a modoLibre
+  const volverInicio = () => {
+    playSound(sonidoBoton);
+    location.reload(); // vuelve al Welcome
+  };
+
+  // 🎵 Reproducir sonido de ambiente del paso en modo VER
   useEffect(() => {
     if (modoLibre && paso.sound) {
       const audio = new Audio(paso.sound);
       audio.loop = true;
-      audio.volume = muted ? 0 : 1;
-      audio.play().catch((e) => console.warn("Error al reproducir sonido:", e));
+      audio.volume = 1;
+      playSound(audio, true); // solo este respeta mute
       audioRef.current = audio;
     }
 
-    // Detener sonido al salir del modoLibre
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
@@ -42,18 +61,18 @@ export default function Controles({
     };
   }, [modoLibre, paso.sound]);
 
-  // Silenciar o activar el volumen en tiempo real
+  // Ajustar volumen en tiempo real
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.volume = muted ? 0 : 1;
     }
   }, [muted]);
 
-  // Si NO está en modoLibre => mostrar flechas, VER y descripción
+  // 👉 MODO NORMAL (paso a paso)
   if (!modoLibre) {
     return (
       <>
-        {/* Flechas de navegación */}
+        {/* Flechas */}
         {currentStep > 1 && (
           <img
             src="/flecha_izquierda.png"
@@ -73,7 +92,7 @@ export default function Controles({
           />
         )}
 
-        {/* Descripción del paso actual */}
+        {/* Descripción */}
         <div className="absolute bottom-[18vh] left-1/2 -translate-x-1/2 w-[90%] max-w-md bg-white rounded-xl border-2 border-slate-800 shadow-lg p-5 flex flex-col items-center z-50">
           <p className="text-sm text-gray-800 mb-2 text-center max-h-[80px] overflow-y-auto">
             {paso.description}
@@ -85,16 +104,29 @@ export default function Controles({
 
         {/* Botón VER */}
         <button
-          onClick={() => setModoLibre(true)}
+          onClick={() => {
+            playSound(sonidoBoton);
+            setModoLibre(true);
+          }}
           className="fixed bottom-6 left-1/2 -translate-x-1/2 bg-cyan-900 text-white px-6 py-2 rounded-md shadow-md hover:bg-cyan-800 transition z-50"
         >
           VER
         </button>
+
+        {/* Botón INICIO solo si es el último paso */}
+        {currentStep === Object.keys(pasos).length && (
+          <button
+            onClick={volverInicio}
+            className="fixed bottom-6 right-6 bg-red-700 text-white font-bold px-6 py-2 rounded-md shadow-md hover:bg-red-600 transition z-50"
+          >
+            Inicio
+          </button>
+        )}
       </>
     );
   }
 
-  // Si está en modoLibre => mostrar botón RETROCEDER y MUTE
+  // 👉 MODO VER
   return (
     <>
       {/* Botón de sonido 🔊/🔇 */}
@@ -112,7 +144,10 @@ export default function Controles({
 
       {/* Botón RETROCEDER */}
       <button
-        onClick={() => setModoLibre(false)}
+        onClick={() => {
+          playSound(sonidoBoton);
+          setModoLibre(false);
+        }}
         className="fixed bottom-6 right-6 bg-cyan-900 text-white px-5 py-2 rounded-md shadow-md hover:bg-cyan-800 transition z-50"
       >
         Retroceder

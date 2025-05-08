@@ -1,19 +1,15 @@
 "use client";
 
 import { Canvas, useThree } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Suspense, useRef, useState, useEffect } from "react";
 import Model3D from "./Model3D";
 import { pasos } from "./pasos";
 import Welcome from "./Welcome";
 import Controles from "./Controles";
+import Fondo from "./Fondo"; // <-- importa el fondo dinámico
 
-// Precargar todos los modelos 3D
-Object.values(pasos).forEach((p) => {
-  useGLTF.preload(p.model);
-});
-
-// Controlador de cámara que cambia según el modo
+// Controlador de cámara que cambia según modo
 function CameraController({ modoLibre }) {
   const controlsRef = useRef();
   const { camera } = useThree();
@@ -50,18 +46,23 @@ export default function Scene({ pasoInicial = 1 }) {
       <Canvas camera={{ position: [0, 2, 20], fov: 50 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[1, 2, 3]} intensity={1.5} />
+
         <CameraController modoLibre={modoLibre} />
+
         <Suspense fallback={null}>
           <Model3D ruta={paso.model} scale={paso.scale} />
         </Suspense>
+
+        {/* Fondo dinámico con imágenes */}
+        <Fondo modoLibre={modoLibre} />
       </Canvas>
 
-      {/* Título del paso actual */}
+      {/* Título del paso */}
       <h1 className="absolute top-6 inset-x-0 text-center text-3xl sm:text-4xl md:text-5xl font-bold text-red-600 drop-shadow-lg z-50">
         {paso.title}
       </h1>
 
-      {/* Controles de navegación y audio */}
+      {/* Controles */}
       <Controles
         currentStep={currentStep}
         setCurrentStep={setCurrentStep}
