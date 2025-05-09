@@ -4,13 +4,13 @@ import { pasos } from "./pasos";
 
 export default function FlujoProceso({ onContinuar }) {
   return (
-    <div className="w-screen h-screen flex items-center justify-center bg-gradient-to-b from-white to-slate-100 px-4">
-      <div className="w-full max-w-6xl flex flex-col items-center justify-center text-center">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-900 mb-6 leading-snug">
+    <div className="w-screen h-screen bg-[url('/found/fondo_piña.jpg')] bg-cover bg-center flex items-center justify-center p-4">
+      <div className="w-full max-w-5xl bg-white/70 backdrop-blur-md rounded-xl shadow-lg px-6 py-10 text-center text-cyan-900">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">
           Flujo del Proceso de Producción de Bioetanol a partir de Biomasa de Piña
         </h1>
 
-        <p className="text-gray-700 text-sm sm:text-base max-w-2xl mb-8">
+        <p className="text-gray-700 text-sm sm:text-base max-w-3xl mx-auto mb-8">
           A continuación, se presenta una visión general del proceso de producción de bioetanol
           mediante el aprovechamiento de la biomasa de piña. Cada etapa representa una fase clave,
           ordenada de forma secuencial para facilitar su comprensión.
@@ -24,7 +24,7 @@ export default function FlujoProceso({ onContinuar }) {
                   {paso.title}
                 </div>
                 {index < Object.keys(pasos).length - 1 && (
-                  <div className="mx-2 text-lg sm:text-xl text-gray-400">➜</div>
+                  <div className="mx-2 text-lg sm:text-xl text-gray-500">➜</div>
                 )}
               </div>
             ))}
