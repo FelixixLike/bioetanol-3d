@@ -17,7 +17,8 @@ export default function FlujoProceso({ onContinuar }) {
         </p>
 
         <div className="w-full overflow-x-auto">
-          <div className="flex gap-4 items-center justify-start sm:justify-center px-2 py-4 min-w-[600px]">
+          <div className="inline-flex gap-4 items-center px-2 py-4">
+
             {Object.entries(pasos).map(([key, paso], index) => (
               <div key={key} className="flex items-center">
                 <div className="bg-white border border-cyan-800 px-4 py-2 rounded shadow text-sm sm:text-base text-cyan-900 font-medium whitespace-nowrap">
