@@ -28,12 +28,14 @@ export default function Welcome({ onAceptar }) {
   if (!ready) return null;
 
   return (
-    <div className="fixed inset-0 bg-cover bg-center bg-no-repeat z-50 overflow-y-auto flex items-center justify-center px-4 py-12"
+    <div className="fixed inset-0 bg-cover bg-center bg-no-repeat z-50 overflow-y-auto flex items-start justify-center px-4 py-8"
+
       style={{
         backgroundImage: `url('/found/piña.jpg')`,
       }}
     >
-      <div className="max-w-4xl w-full bg-white/90 backdrop-blur-lg rounded-xl shadow-xl p-8 text-center space-y-6 select-none">
+      <div className="mt-8 max-w-4xl w-full bg-white/90 backdrop-blur-lg rounded-xl shadow-xl p-8 pt-6 text-center space-y-6 select-none">
+
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-900 leading-tight">
           Sitio Web Interactivo en 3D para la Simulación del Proceso de Producción de Bioetanol a partir de Biomasa de Piña
         </h1>

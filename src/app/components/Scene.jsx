@@ -8,11 +8,13 @@ import { pasos } from "./pasos";
 import Welcome from "./Welcome";
 import Controles from "./Controles";
 import Fondo from "./Fondo"; // <-- importa el fondo dinámico
+import FlujoProceso from "./FlujoProceso";
 
 // Controlador de cámara que cambia según modo
 function CameraController({ modoLibre }) {
   const controlsRef = useRef();
   const { camera } = useThree();
+  
 
   useEffect(() => {
     // Solo modificamos en modoLibre (modo 'ver')
@@ -37,12 +39,17 @@ export default function Scene({ pasoInicial = 1 }) {
   const [aceptado, setAceptado] = useState(false);
   const [currentStep, setCurrentStep] = useState(pasoInicial);
   const [modoLibre, setModoLibre] = useState(false);
-
+  const [mostrarFlujo, setMostrarFlujo] = useState(true);
   const paso = pasos[currentStep];
 
   if (!aceptado) {
-    return <Welcome onAceptar={() => setAceptado(true)} />;
-  }
+  return <Welcome onAceptar={() => setAceptado(true)} />;
+}
+
+if (mostrarFlujo) {
+  return <FlujoProceso onContinuar={() => setMostrarFlujo(false)} />;
+}
+
 
   return (
     <div className="relative w-screen h-screen">

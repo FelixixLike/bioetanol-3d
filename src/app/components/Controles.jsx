@@ -48,7 +48,7 @@ export default function Controles({
     const speech = new SpeechSynthesisUtterance(texto);
     speech.lang = "es-ES";
     speech.pitch = 1;
-    speech.rate = 1;
+    speech.rate = 0.95;
     speech.preferLocalService = true;
 
     speech.onend = () => {
@@ -166,7 +166,8 @@ export default function Controles({
                 {/* Botón ver más */}
                 <button
                   onClick={() => setMostrarTexto(true)}
-                  className="absolute bottom-[10.5vh] left-1/2 -translate-x-1/2 bg-black/80 text-white px-4 py-1 text-xs rounded-full z-50"
+                  className="absolute bottom-[10.5vh] right-6 bg-black/80 text-white px-4 py-1 text-xs rounded-full z-50 hover:bg-black transition"
+
                 >
                   ⬆ Ver texto
                 </button>
@@ -181,7 +182,7 @@ export default function Controles({
                     onClick={() => setMostrarTexto(false)}
                     className="bg-red-600 text-white px-3 py-1 rounded-full text-sm hover:bg-red-700 transition"
                   >
-                    ⬇ Cerrar
+                    ⬇ Ver menos
                   </button>
                 </div>
                 <div className="flex flex-wrap justify-center gap-4 mb-4 w-full">
