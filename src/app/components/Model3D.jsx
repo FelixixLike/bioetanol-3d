@@ -2,7 +2,7 @@
 import { useGLTF } from "@react-three/drei";
 import { useState, useEffect } from "react";
 
-export default function Model3D({ ruta, scale }) {
+export default function Model3D({ ruta, scale, modoLibre  }) {
   const { scene } = useGLTF(ruta);
   const [isReady, setIsReady] = useState(false);
 
@@ -18,6 +18,11 @@ export default function Model3D({ ruta, scale }) {
   if (!isReady) return null;
 
   return (
-    <primitive object={scene} scale={scale} position={[0, -0.5, 0]} />
+    <primitive
+  object={scene}
+  scale={scale}
+  position={modoLibre ? [0, 0, 0] : [0, 1, 0]}
+/>
+
   );
 }

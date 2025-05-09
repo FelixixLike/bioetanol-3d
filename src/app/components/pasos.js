@@ -6,7 +6,7 @@ export const pasos = {
     sound: "/sounds/pineapple.mp3",
     title: "Materia prima",
     description: "La piña es seleccionada como materia prima por su alto contenido de azúcares naturales, lo que la convierte en una fuente ideal para la producción de bioetanol a partir de biomasa.",
-    scale: 0.6,
+    scale: 3.5,
     objetive: "Reconocer la piña como un recurso renovable clave para la producción de bioetanol y comprender su valor como fuente de azúcares fermentables."
   },
   2: {

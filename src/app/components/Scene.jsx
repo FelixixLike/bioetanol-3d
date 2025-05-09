@@ -15,8 +15,11 @@ function CameraController({ modoLibre }) {
   const { camera } = useThree();
 
   useEffect(() => {
-    camera.position.set(1, 3, modoLibre ? 7 : 20);
-    camera.lookAt(0, 0, 0);
+    // Solo modificamos en modoLibre (modo 'ver')
+    if (modoLibre) {
+      camera.position.set(0, 3, 20); // más alejado y centrado
+      camera.lookAt(0, 0, 0);
+    }
   }, [modoLibre]);
 
   return (
@@ -24,8 +27,8 @@ function CameraController({ modoLibre }) {
       ref={controlsRef}
       enableZoom={modoLibre}
       enablePan={false}
-      minDistance={modoLibre ? 5 : 20}
-      maxDistance={modoLibre ? 8 : 20}
+      minDistance={modoLibre ? 6 : 20}
+      maxDistance={modoLibre ? 14 : 20}
     />
   );
 }
@@ -50,17 +53,18 @@ export default function Scene({ pasoInicial = 1 }) {
         <CameraController modoLibre={modoLibre} />
 
         <Suspense fallback={null}>
-          <Model3D ruta={paso.model} scale={paso.scale} />
+          <Model3D ruta={paso.model} scale={paso.scale} modoLibre={modoLibre} />
+
         </Suspense>
 
-        {/* Fondo dinámico con imágenes */}
         <Fondo modoLibre={modoLibre} />
       </Canvas>
 
       {/* Título del paso */}
-      <h1 className="absolute top-6 inset-x-0 text-center text-3xl sm:text-4xl md:text-5xl font-bold text-red-600 drop-shadow-lg z-50">
-        {paso.title}
-      </h1>
+     <h1 className="absolute top-6 inset-x-0 text-center text-3xl sm:text-4xl md:text-5xl font-bold text-red-600 z-50 bg-white/50 backdrop-blur-sm px-4 py-1 rounded-lg shadow-md">
+  {paso.title}
+</h1>
+
 
       {/* Controles */}
       <Controles

@@ -5,22 +5,19 @@ import { pasos } from "./pasos";
 
 export default function Welcome({ onAceptar }) {
   const [contador, setContador] = useState(5);
-  const [ready, setReady] = useState(false); // <- reemplaza mounted
+  const [ready, setReady] = useState(false);
 
-  // ⚠️ Esperar a que React monte completamente para evitar errores de hidratación
   useEffect(() => {
-    const timeout = setTimeout(() => setReady(true), 0); // siguiente tick
+    const timeout = setTimeout(() => setReady(true), 0);
     return () => clearTimeout(timeout);
   }, []);
 
-  // ✅ Preload separado (no se mezcla con mounted/ready)
   useEffect(() => {
     Object.values(pasos).forEach((p) => {
       useGLTF.preload(p.model);
     });
   }, []);
 
-  // ⏱ Contador
   useEffect(() => {
     if (contador > 0) {
       const timer = setTimeout(() => setContador((prev) => prev - 1), 1000);
@@ -28,11 +25,15 @@ export default function Welcome({ onAceptar }) {
     }
   }, [contador]);
 
-  if (!ready) return null; // evita render inicial desincronizado
+  if (!ready) return null;
 
   return (
-    <div className="fixed inset-0 bg-white z-50 flex flex-col items-center px-4 sm:px-6 pt-16 sm:pt-24 pb-10 text-center overflow-y-auto">
-      <div className="max-w-4xl space-y-8">
+    <div className="fixed inset-0 bg-cover bg-center bg-no-repeat z-50 overflow-y-auto flex items-center justify-center px-4 py-12"
+      style={{
+        backgroundImage: `url('/found/piña.jpg')`,
+      }}
+    >
+      <div className="max-w-4xl w-full bg-white/90 backdrop-blur-lg rounded-xl shadow-xl p-8 text-center space-y-6 select-none">
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-cyan-900 leading-tight">
           Sitio Web Interactivo en 3D para la Simulación del Proceso de Producción de Bioetanol a partir de Biomasa de Piña
         </h1>
